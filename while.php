@@ -1,53 +1,49 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>While Loop — สูตรคูณ</title>
-    <link rel="stylesheet" href="while.css">
+    <title>สูตรคูณ</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
- 
-    <div class="wrapper">
- 
-        <header class="page-header">
-            <a href="index.php" class="back-btn">← กลับหน้าหลัก</a>
-            <h1>ตารางสูตรคูณ 1–12</h1>
-            <p class="subtitle">แสดงด้วย <span class="tag">while loop</span> ซ้อน <span class="tag">while loop</span></p>
-        </header>
- 
-        <div class="code-block">
-            <span class="code-label">logic</span>
 
-        </div>
- 
-        <div class="tables-grid">
-            <?php
-                $i = 1;
-                while($i <= 12){
-                    echo "<div class='table-card' style='--card-index:{$i}'>";
-                    echo "<div class='table-header'>แม่ {$i}</div>";
-                    echo "<div class='table-rows'>";
- 
-                    $j = 1;
-                    while($j <= 12){
-                        $result = $i * $j;
-                        $highlight = ($result % 10 === 0) ? " highlight" : "";
-                        echo "<div class='row{$highlight}'>";
-                        echo "<span class='lhs'>{$i} × {$j}</span>";
-                        echo "<span class='eq'>=</span>";
-                        echo "<span class='res'>{$result}</span>";
-                        echo "</div>";
-                        $j++;
-                    }
- 
-                    echo "</div></div>";
-                    $i++;
+    <div class="wrapper">
+
+        <?php
+            echo "<h1>งานที่ 1 ฐยศปกรณ ทองสุข BIT.2/4 เลขที่ 04</h1>";
+        ?>
+
+        <a href="index.php">While Loop →</a>
+
+        <form action="" method="get">
+            <label for="num">เลขแม่สูตรคูณ</label>
+            <input type="number" name="num" id="num" placeholder="ใส่เลขแม่สูตรคูณ" min="1">
+            <input type="submit" value="คำนวณ">
+        </form>    
+
+        <?php
+            if(isset($_GET["num"])){
+                $num = htmlspecialchars($_GET["num"]);
+
+                echo "<div class='result-box'>";
+                echo "<div class='result-title'>สูตรคูณแม่ " . $num . "</div>";
+                echo "<table class='result-table'>";
+
+                for($i = 1; $i <= 12; $i++){
+                    $result = $num * $i;
+                    echo "<tr>
+                            <td>{$num} &times; {$i}</td>
+                            <td>= {$result}</td>
+                          </tr>";
                 }
-            ?>
-        </div>
- 
+
+                echo "</table>";
+                echo "</div>";
+            }
+        ?>
+
     </div>
- 
+
 </body>
 </html>

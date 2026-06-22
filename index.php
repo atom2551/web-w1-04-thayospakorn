@@ -14,7 +14,7 @@
             echo "<h1>งานที่ 1 ฐยศปกรณ ทองสุข BIT.2/4 เลขที่ 04</h1>";
         ?>
 
-        <a href="while.php">While Loop →</a>
+        <a href="while.php">For Loop →</a>
 
         <form action="" method="get">
             <label for="num">เลขแม่สูตรคูณ</label>
