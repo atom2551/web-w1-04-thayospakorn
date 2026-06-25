@@ -23,25 +23,27 @@
         </form>    
 
         <?php
-            if(isset($_GET["num"])){
-                $num = htmlspecialchars($_GET["num"]);
+if(isset($_GET["num"])){
+    $num = htmlspecialchars($_GET["num"]);
 
-                echo "<div class='result-box'>";
-                echo "<div class='result-title'>สูตรคูณแม่ " . $num . "</div>";
-                echo "<table class='result-table'>";
+    echo "<div class='result-box'>";
+    echo "<div class='result-title'>สูตรคูณแม่ " . $num . "</div>";
+    echo "<table class='result-table'>";
 
-                for($i = 1; $i <= 12; $i++){
-                    $result = $num * $i;
-                    echo "<tr>
-                            <td>{$num} &times; {$i}</td>
-                            <td>= {$result}</td>
-                          </tr>";
-                }
+    $i = 1;
+    while($i <= 12){
+        $result = $num * $i;
+        echo "<tr>
+                <td>{$num} &times; {$i}</td>
+                <td>= {$result}</td>
+              </tr>";
+        $i++;
+    }
 
-                echo "</table>";
-                echo "</div>";
-            }
-        ?>
+    echo "</table>";
+    echo "</div>";
+}
+?>
 
     </div>
 
